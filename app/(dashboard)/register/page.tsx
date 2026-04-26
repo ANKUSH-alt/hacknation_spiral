@@ -34,8 +34,8 @@ export default function RegisterPage() {
           <button onClick={() => setSubmitted(false)} className="rounded-md border border-border px-4 py-2 text-sm hover:bg-muted transition-colors">
             Register another
           </button>
-          <Link href="/catalog" className="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 transition-colors">
-            View Catalog
+          <Link href="/marketplace" className="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-500 transition-colors">
+            View Marketplace
           </Link>
         </div>
       </div>

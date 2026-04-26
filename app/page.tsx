@@ -159,7 +159,7 @@ export default function LandingPage() {
           <nav className="hidden items-center gap-0.5 md:flex">
             {[
               { href: "/marketplace", label: "Marketplace" },
-              { href: "/demo",        label: "Demo" },
+              { href: "/login",       label: "Demo" },
             ].map((l, i) => (
               <Link key={i} href={l.href}
                 className="nav-link px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">

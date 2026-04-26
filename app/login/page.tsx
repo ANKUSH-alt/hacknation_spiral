@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Zap, Github, Mail, Eye, EyeOff } from "lucide-react";
+import { Zap, Github, Mail, Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { createClient } from "@/lib/supabase";
 
 export default function LoginPage() {
@@ -27,6 +27,7 @@ export default function LoginPage() {
     if (mode === "login") {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) { setError(error.message); setLoading(false); return; }
+      router.refresh();
       router.push("/dashboard");
     } else {
       const { error } = await supabase.auth.signUp({ email, password });
@@ -46,6 +47,10 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="w-full max-w-sm">
+
+        <Link href="/" className="mb-4 flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors">
+          <ArrowLeft className="h-3.5 w-3.5" /> Back to home
+        </Link>
 
         <Link href="/" className="mb-8 flex items-center justify-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center bg-blue-600">
